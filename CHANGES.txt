@@ -1,5 +1,8 @@
 Changelog
 =========
+Expozee
+-----
+- Give admins options to make users anonymous
 
 1.9.4
 -----
