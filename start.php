@@ -19,6 +19,8 @@ function izapProfileVisitors() {
 
 	elgg_register_widget_type('izapProfileVisitors', elgg_echo('izapProfileVisitor:Widget'), elgg_echo('izapProfileVisitor:WidgetDescription'));
 
+	elgg_register_plugin_hook_handler('register', 'menu:user_hover', 'izapHoverMenu');
+
 	elgg_extend_view('css/elgg', 'izapprofilevisitor/css');
 	elgg_extend_view('profile/details', 'izapprofilevisitor/userdetails', 1);
 }
