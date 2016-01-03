@@ -7,6 +7,7 @@
  * @link http://www.izap.in/
  *
  * iionly; Version 1.8 and newer
+ * Dries de Krom; Anonymous function
  */
 
 /**
@@ -136,3 +137,39 @@ function izapVisitorList() {
 		return unserialize($Metadata[0]->value);
 	}
 }
+
+/**
+ * Set up items for user_hover menu
+ */
+function izapHoverMenu ($hook, $type, $menu, $params) {
+ 	if (!elgg_is_logged_in()) {
+ 		return $menu;
+ 	}
+	 $current_user = elgg_get_logged_in_user_entity();
+	// Allow only admins to make one anonymous
+	if (!$current_user->isAdmin() && $current_user->visanonymity !== true) {
+ 		return $menu;
+	}
+	$user = $params['entity'];
+	// User cannot make/unmake himself anonymous
+	if ($user->guid === $current_user->guid) {
+		return $menu;
+	}
+	if (!$user instanceof ElggUser) {
+		return $menu;
+	}
+	if ($user->visanonymity === true) {
+		$action = 'unmake_anonymous';
+		$text = elgg_echo('izapProfileVisitor:UnMakeAnonymous');
+	} else {
+		$action = 'make_anonymous';
+		$text = elgg_echo('izapProfileVisitor:MakeAnonymous');
+	}
+	$menu[] = ElggMenuItem::factory(array(
+		'name' => 'anonymous',
+		'text' => $text,
+		'href' => "action/izap_profile_visitors/$action?guid={$user->guid}",
+		'is_action' => true,
+	));
+		return $menu;
+ }
