@@ -22,10 +22,11 @@ function izapMarkVisitor() {
 	$VisitorEntity = elgg_get_logged_in_user_entity();
 	$VisitorName = $VisitorEntity->name;
 	$VisitorGuid = $VisitorEntity->guid;
+	$VisitorAnonymity = $VisitorEntity->visanonymity;
 
 	$VisitorsArray = array();
 
-	if (($VisitorGuid != $ProfileGuid) && $VisitorEntity && $ProfileEntity) {
+	if (($VisitorGuid != $ProfileGuid) && $VisitorEntity && $ProfileEntity && (!isset($VisitorAnonymity))) {
 
 		$md = elgg_get_metadata(array('guid' => $ProfileGuid, 'metadata_name' => 'izapProfileVisitor', 'limit' => false));
 		$Metadata = array();
