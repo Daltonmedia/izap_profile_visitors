@@ -3,10 +3,10 @@
  * Make a user anonymous
  */
 
-$user = elgg_get_logged_in_user_entity();
+$loggedinuser = elgg_get_logged_in_user_entity();
 
 //only admins for now
-if (!$user->isAdmin()) {
+if (!$loggedinuser->isAdmin()) {
 	register_error(elgg_echo('actionunauthorized'));
 }
 
