@@ -15,5 +15,5 @@ return array(
 	'izapProfileVisitor:NumberOfVisitors' => 'Visitors to display',
 	'izapProfileVisitor:NoVisits' => 'No one visited me yet. :(',
 	'izapProfileVisitor:MadeAnonymous' => 'User is anonymous now',
-	'izapProfileVisitor:MadeAnonymous' => 'User is visible again'
+	'izapProfileVisitor:UnMadeAnonymous' => 'User is visible again'
 );
