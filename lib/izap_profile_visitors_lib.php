@@ -170,6 +170,7 @@ function izapHoverMenu ($hook, $type, $menu, $params) {
 		'text' => $text,
 		'href' => "action/izap_profile_visitors/$action?guid={$user->guid}",
 		'is_action' => true,
+		'section' => 'admin'
 	));
 		return $menu;
  }
