@@ -7,6 +7,7 @@
  * @link http://www.izap.in/
  *
  * iionly; Version 1.8 and newer
+ * Dries de Krom; Anonymous option
  */
 
 // registering the plugin
