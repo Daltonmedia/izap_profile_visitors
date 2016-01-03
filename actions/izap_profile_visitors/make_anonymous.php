@@ -14,6 +14,6 @@ $guid = get_input('guid');
 
 $user = get_user($guid);
 
-$user->visanonymity = 'true';
+$user->visanonymity = true;
 
 system_message(elgg_echo('izapProfileVisitor:MadeAnonymous', array($user->name)));
