@@ -13,5 +13,7 @@ return array(
 	'izapProfileVisitor:Widget' => 'Recent profile visitors',
 	'izapProfileVisitor:WidgetDescription' => 'This widget lets you know who visited your profile recently.',
 	'izapProfileVisitor:NumberOfVisitors' => 'Visitors to display',
-	'izapProfileVisitor:NoVisits' => 'No one visited me yet. :('
+	'izapProfileVisitor:NoVisits' => 'No one visited me yet. :(',
+	'izapProfileVisitor:MadeAnonymous' => 'User is anonymous now.
+
 );
